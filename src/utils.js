@@ -1,27 +1,22 @@
-import dotenv from "dotenv";
-import path from "path";
-dotenv.config({path: path.resolve(__dirname,".env")});
+import "./env";
 import { adjectives, nonus } from "./words"
-import sgMail from "@sendgrid/mail";
+const sgMail = require('@sendgrid/mail');
 
-export const generateSecret = () => {
+import jwt from "jsonwebtoken";
+
+export const generateSecret = () => { //랜덤 비밀번호 생성
     const randomNumber =Math.floor(Math.random()*adjectives.length);
     return `${adjectives[randomNumber]} ${nonus[randomNumber]}`;
 }
 
-console.log(
-    process.env.SENDGRID_API_KEY
-    );
-
-
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-export const sendSecretMail =(address, secret) => {
+export const sendSecretMail =(address, secret) => { //메일보내기
     const mail = {
        to: address, 
        from: 'dnjsvltm327@gmail.com', 
-       subject: 'Login Secret for Instagram',
-       html: `Hello, Your Login secret it ${secret}.<br/> 카피하시오`,
+       subject: '🔑Login Secret for Instagrdam🔑',
+       html: `비밀번호를 입력하세요 <strong>${secret}</strong><br/> 이것을 카피하시오`,
     };
     return sgMail.send(mail).then(() => {
         console.log('Email sent')
@@ -30,4 +25,7 @@ export const sendSecretMail =(address, secret) => {
         console.error(error)
       })
 }
+
+export const generateToken = id => jwt.sign(console.log({id}),process.env.JWT_SECRET);
+//토큰 만들기
 
