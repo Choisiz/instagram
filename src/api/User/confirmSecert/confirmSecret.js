@@ -1,5 +1,5 @@
-//인증 요청 확인
-import { prisma } from "../../../../generated/prisma-client";
+//인증요청확인
+import {prisma} from "../../../../generated/prisma-client";
 import { generateToken } from "../../../utils";
 
 export default {
@@ -10,7 +10,7 @@ export default {
             if(user.loginSecret ===secret){
                 return generateToken(user.id);
             }else{
-                throw Error("이메일/비밀번호가 잘못조합됬습니다.");
+                throw Error("이메일/비밀번호 잘못입력함");
             }
         }
     }

@@ -26,6 +26,6 @@ export const sendSecretMail =(address, secret) => { //메일보내기
       })
 }
 
-export const generateToken = id => jwt.sign(console.log({id}),process.env.JWT_SECRET);
+export const generateToken = id => jwt.sign({ id },process.env.JWT_SECRET);
 //토큰 만들기
 

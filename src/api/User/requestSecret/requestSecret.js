@@ -1,18 +1,17 @@
-//인증(메일) 보내기
+//메일보내기 (인증)
 import { generateSecret, sendSecretMail } from "../../../utils";
-import { prisma } from "../../../../generated/prisma-client";
+import {prisma} from "../../../../generated/prisma-client";
 
 export default {
     Mutation: {
-        requestSecret: async(_,args,{request}) => {
-            console.log(request);
-            const {email} = args;
-            const loginSecret = generateSecret(); //랜덤 비밀번호 생성
+        requestSecret: async(_,args,{request}) =>{
+            console.log(request.user);
+            const {email} =args;
+            const loginSecret= generateSecret();
             try{
-                throw Error();
-                await sendSecretMail(email,loginSecret); //받는 사용자 email,loginSecret 메일로 보내기
-                await prisma.updateUser({data:{loginSecret},where:{email}});
-                //pisma에 받는 사용자 메일기준으로 loginSecret 업데이트
+                throw Error(); //test
+                await sendSecretMail(email, loginSecret);
+                await prisma.updateUser({data:{loginSecret}, where:{email}});
                 return true;
             }catch{
                 return false;
