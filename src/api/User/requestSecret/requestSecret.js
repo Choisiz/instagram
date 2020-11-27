@@ -9,7 +9,7 @@ export default {
             const {email} =args;
             const loginSecret= generateSecret();
             try{
-                throw Error(); //test
+                
                 await sendSecretMail(email, loginSecret);
                 await prisma.updateUser({data:{loginSecret}, where:{email}});
                 return true;
