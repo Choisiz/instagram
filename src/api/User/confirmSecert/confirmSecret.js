@@ -1,7 +1,7 @@
-//인증요청확인
 import {prisma} from "../../../../generated/prisma-client";
 import { generateToken } from "../../../utils";
 
+//인증요청확인
 export default {
     Mutation: {
         confirmSecret: async(_,args) => {

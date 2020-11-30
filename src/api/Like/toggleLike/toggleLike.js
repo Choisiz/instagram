@@ -1,5 +1,6 @@
-import { isAuthenticated } from "../../../meddlewares";
 import {prisma} from "../../../../generated/prisma-client";
+
+//좋아요
 export default {
     Mutation: {
         toggleLike: async (_, args, {request}) => {

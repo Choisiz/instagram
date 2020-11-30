@@ -32,4 +32,4 @@ export const authenticateJwt = (req,res,next) =>
   })(req,res,next);
   
   passport.use(new Strategy(jwtOptions, verifyUser));
-  passport.initialize();
+  passport.initialize(); //passport 종료

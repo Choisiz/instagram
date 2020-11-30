@@ -1,6 +1,6 @@
 import { prisma } from "../../../../generated/prisma-client";
-import { isAuthenticated } from "../../../meddlewares"
 
+//댓글달기
 export default {
     Mutation: {
         addComment: async(_,args, {request}) => {

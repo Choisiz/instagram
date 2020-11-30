@@ -1,11 +1,10 @@
-//메일보내기 (인증)
 import { generateSecret, sendSecretMail } from "../../../utils";
 import {prisma} from "../../../../generated/prisma-client";
 
+//메일보내기 (인증)
 export default {
     Mutation: {
         requestSecret: async(_,args,{request}) =>{
-            console.log(request.user);
             const {email} =args;
             const loginSecret= generateSecret();
             try{

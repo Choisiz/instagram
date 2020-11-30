@@ -1,6 +1,6 @@
-//사용자 검색하기
 import { prisma } from "../../../../generated/prisma-client";
 
+//사용자 검색하기
 export default {
     Query: {
         searchUser: async(_, args) =>

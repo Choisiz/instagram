@@ -1,11 +1,9 @@
-//사용자만들기
-import { makePrismaClientClass} from "prisma-client-lib";
 import {prisma} from "../../../../generated/prisma-client";
 
+//사용자만들기
 export default {
     Mutation: {
         createAcount: async(_,args) =>{
-            console.log(prisma);
             const {userName, email, firstName="", lastName="",bio=""} = args;
             const user = await prisma.createUser({
                 userName,
