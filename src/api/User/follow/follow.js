@@ -1,3 +1,4 @@
+//follow 하기
 import { prisma } from "../../../../generated/prisma-client";
 import { isAuthenticated } from "../../../meddlewares"
 
