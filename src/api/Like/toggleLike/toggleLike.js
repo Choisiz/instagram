@@ -3,7 +3,7 @@ import {prisma} from "../../../../generated/prisma-client";
 //좋아요
 export default {
     Mutation: {
-        toggleLike: async (_, args, {request}) => {
+        toggleLike: async (_, args, {request,isAuthenticated}) => {
             isAuthenticated(request);
             const {postId} = args;
             const {user} = request;

@@ -13,6 +13,7 @@ export default {
                 posts
             };
             /*
+            
             return prisma.user({
                 id: user.id
             }).$fragment(USER_FRAGMENT);

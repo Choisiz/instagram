@@ -3,9 +3,14 @@ import { prisma } from "../../../../generated/prisma-client";
 //유저정보
 export default {
     Query: {
-        seeUser: (_,args) =>{
+        seeUser: async(_,args) =>{
             const {id} = args;
-            return prisma.user({id});
+            const user =await prisma.user({id});
+            const posts =await prisma.user({id}).post();
+            return {
+                user,
+                posts
+            }
         }
     }
 };
