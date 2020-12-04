@@ -13,9 +13,8 @@ export default {
                 posts
             };
             /*
-            
             return prisma.user({
-                id: user.id
+             id: user.id
             }).$fragment(USER_FRAGMENT);
             복잡한 쿼리,ralationship일시 fragment 보다 다른구문 추천
             */

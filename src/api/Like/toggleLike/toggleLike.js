@@ -7,7 +7,6 @@ export default {
             isAuthenticated(request);
             const {postId} = args;
             const {user} = request;
-            
             const filterOptions = {
                 AND: [
                     {

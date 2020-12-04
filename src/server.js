@@ -7,7 +7,6 @@ import { authenticateJwt } from "./passport";
 import { isAuthenticated } from "./meddlewares"
 
 const PORT = process.env.PORT || 4000;
-
 const server = new GraphQLServer({
   schema,
   context: ({request}) => ({request, isAuthenticated})

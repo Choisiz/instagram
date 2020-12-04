@@ -21,7 +21,7 @@ type Post{
   caption: String!
   user: User!
   likes: [Like!]!
-  comment: [Comment!]!
+  comments: [Comment!]!
 }
 
 type Like{
