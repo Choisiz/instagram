@@ -3,6 +3,7 @@ import { prisma } from "../../../../generated/prisma-client";
 const DELETE ="DELETE";
 const EDIT ="EDIT";
 
+//포스트 수정 및 삭제
 export default {
     Mutation: {
         editPost: async(_,args,{request,isAuthenticated})=> {
