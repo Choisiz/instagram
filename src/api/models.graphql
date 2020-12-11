@@ -52,7 +52,7 @@ type File {
 
 type Room {
   id: ID!
-  particpants: [User!]!
+  participants: [User!]!
   message: [Message!]!
 }
 
