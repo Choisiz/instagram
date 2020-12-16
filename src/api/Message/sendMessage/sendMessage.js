@@ -1,5 +1,5 @@
-import {prisma} from "../../../generated/prisma-client";
-import {ROOM_FRAGMENT} from "../../fragment";
+import {prisma} from "../../../../generated/prisma-client";
+import {ROOM_FRAGMENT} from "../../../fragment";
 
 //채팅방만들기 및 메세지 보내기
 export default {
