@@ -9,7 +9,6 @@ export default {
                 OR: [
                     {location_starts_with: args.term},
                     {caption_starts_with: args.term},
-                    {user: {userName_starts_with: args.term}}
                 ]
             }
         })

@@ -32,6 +32,16 @@ export default {
                 }
             })
             .aggregate()
-            .count() //좋아요 숫자
+            .count(), //좋아요 숫자
+        commentCount: (parent) =>
+            prisma.commentConnection({
+                where: {
+                    post: {
+                        id: parent.id
+                    }
+                }
+            })
+            .aggregate()
+            .count()
     }
 }
