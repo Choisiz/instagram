@@ -45,7 +45,7 @@ export default {
             });
             return exists;
 
-           }catch (error) {
+           }catch {
                return false;
            }
         },

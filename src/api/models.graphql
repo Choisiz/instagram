@@ -25,10 +25,10 @@ type User {
 
 type Post {
   id: ID!
-  files: [File!]!
   location: String
   caption: String!
   user: User!
+  files: [File!]!
   likes: [Like!]!
   comments: [Comment!]!
   isLiked: Boolean!

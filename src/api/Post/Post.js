@@ -5,7 +5,8 @@ export default {
         files: ({id}) => prisma.post({id}).files(), //파일
         comments: ({id}) => prisma.post({id}).comments(), //댓글
         user: ({id}) => prisma.post({id}).user(), //사용자
-        isLiked: async (parent, _, {request}) => {
+        likes: ({ id }) => prisma.post({ id }).likes(),
+        isLiked: (parent, _, {request}) => {
             const {user} = request; 
             const {id} = parent; //입력id = postId
             return prisma.$exists.like({
@@ -34,7 +35,7 @@ export default {
             .aggregate()
             .count(), //좋아요 숫자
         commentCount: (parent) =>
-            prisma.commentConnection({
+            prisma.commentsConnection({
                 where: {
                     post: {
                         id: parent.id
@@ -44,4 +45,4 @@ export default {
             .aggregate()
             .count()
     }
-}
+};
