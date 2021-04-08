@@ -16,10 +16,8 @@ const server = new GraphQLServer({
 server.express.use(logger("dev"));
 server.express.use(authenticateJwt);
 server.express.post("/api/upload", upload.single("file"),(req,res) => {
-  console.log("eee");
-  const {file} =req;
-  console.log(file);
-  res.end();
+  const {file: {location}} =req;
+  res.json({location});
 });
 
 server.start({port:PORT}, () =>
