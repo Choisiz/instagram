@@ -1,3 +1,4 @@
+import "./env";
 import { adjectives, nonus } from "./words"
 const sgMail = require('@sendgrid/mail');
 
