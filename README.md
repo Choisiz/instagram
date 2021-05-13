@@ -24,5 +24,6 @@ instagram clone + prisma+ React + React Native
 - 사진 업로드
 - 사진 편집
 - 사진 삭제
+  dddd
 
 dsdsd
