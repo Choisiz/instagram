@@ -78,6 +78,7 @@ typings/
 # Next.js build output
 .next
 generated
+prisma.yml
 build
 
 
