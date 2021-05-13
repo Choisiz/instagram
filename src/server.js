@@ -1,28 +1,26 @@
 import "./env";
-import { GraphQLServer } from "graphql-yoga";
+import {GraphQLServer} from "graphql-yoga";
 import logger from "morgan";
 import schema from "./schema";
 import "./passport";
 import { authenticateJwt } from "./passport";
-import { isAuthenticated } from "./meddlewares";
+import { isAuthenticated } from "./meddlewares"
 import upload from "./upload";
 
 const PORT = process.env.PORT || 4000;
 const server = new GraphQLServer({
   schema,
-  context: ({ request }) => ({ request, isAuthenticated }),
+  context: ({request}) => ({request, isAuthenticated})
 });
 
 server.express.use(logger("dev"));
 server.express.use(authenticateJwt);
-server.express.post("/api/upload", upload.single("file"), (req, res) => {
-  const {
-    file: { location },
-  } = req;
-  console.log(location);
-  res.json({ location });
+server.express.post("/api/upload", upload.single("file"),(req,res) => {
+  const {file: {location}} =req;
+  console.log(location)
+  res.json({location});
 });
 
-server.start({ port: PORT }, () =>
-  console.log("Server running on http://localhost")
-);
+server.start({port:PORT}, () =>
+  console.log(`Server running on http://localhost:${PORT}")
+  );s
