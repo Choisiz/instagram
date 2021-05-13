@@ -1,4 +1,4 @@
-endpoint: "https://instagramcky-insta-48dbf07443.herokuapp.com/instagram/prod"
+endpoint: "https://instagramcky-insta-48dbf07443.herokuapp.com/instargramcky/dev"
 datamodel: datamodel.prisma
 
 generate:
